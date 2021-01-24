@@ -1,0 +1,47 @@
+<template>
+    <div class="scrollbarr">
+    <table class="slds-table slds-border_left slds-border_right">
+        <thead>
+          <tr class="slds-table slds-table_bordered slds-table_fixed-layout slds-table_resizable-cols">
+            <template for:each = {colums} for:item="col">       
+                    <th scope="col" key={col.Id}>
+                    <span class="slds-truncate"> {col.label} </span>
+                    </th>
+            </template>
+          </tr>
+        </thead>
+
+            <tbody>
+                
+                <template if:true={readytable}>
+                    <template  for:each = {list_Cases_to_render} for:item="c">  
+                    <tr key={c.Id}>
+
+                        <td data-id="CaseNumber" data-label="stage" data-value={c.Status}>
+                            <span class="slds-truncate">{c.CaseNumber}</span>
+                        </td>
+
+                        <td data-id="Status" data-label="stage" data-value={c.Status} >
+                            <span class="slds-truncate">{c.Status}</span>
+                        </td>
+
+                        <td data-id="OccurrenceDateTime" data-label="stage" data-value={c.Status} >
+                            <span class="slds-truncate">{c.OccurrenceDateTime}</span>
+                        </td>
+
+                        <td data-id="DeadlineDateTime" data-label="stage" data-value={c.Status} >
+                            <span class="slds-truncate">{c.DeadlineDateTime}</span>
+                        </td>
+
+                        <td data-id="TimeToDeadline" data-label="stage" data-value={c.Status} >
+                            <span class="slds-truncate">{c.TimeToDeadline}</span>
+                        </td>  
+
+                    </tr>
+                </template>
+                </template>
+            </div>
+            </tbody>
+      </table>
+    </div>
+</template>
